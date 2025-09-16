@@ -1,0 +1,177 @@
+{
+  "main": {
+    "name": "Sergei",
+    "family": "Svetashev",
+    "headline": "Full-Stack Developer",
+    "text": [
+      "I am an experienced Full-Stack Developer (focused on the Frontend) specializing in building robust, scalable, and fully tested web and mobile applications using React, Svelte, JavaScript, and TypeScript. Proven ability to design and implement complex systems, such as API development with Go, as well as adhering to best practices including SOLID principles and CI/CD pipelines. Adept at collaborating across teams to deliver high-quality solutions that align with business goals.",
+      "I am passionate about continuous learning and eager to embrace new challenges to expand technical expertise and drive innovation."
+    ],
+    "info": [
+      { "text": "Email", "url": "mailto:svetashevsergey@gmail.com" },
+      { "text": "GitHub", "url": "https://github.com/Sergey-Svetashev" },
+      {
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/in/sergei-svetashev-2a5b77195/"
+      },
+      {
+        "text": "3-16-7 Kitasenzoku, Tokyo, Japan",
+        "url": "https://www.google.com/maps/place/%E3%80%92145-0062+Tokyo,+Ota+City,+Kitasenzoku,+3-ch%C5%8Dme%E2%88%9216%E2%88%927+%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%81%E3%83%89%E3%83%AA/@35.6065196,139.6866921,18.15z/"
+      }
+    ]
+  },
+  "education": {
+    "university": "TURAN University",
+    "degree": "Bachelor",
+    "faculty": "Engineering and Technology, Radio Engineering, Electronics and Telecommunications",
+    "location": "Almaty, Kazakhstan",
+    "period": "Sep 2009 - Jun 2012"
+  },
+  "experience": {
+    "title": "Experience",
+    "data": [
+      {
+        "title": "Frontend Web Developer",
+        "company": "AdCombo",
+        "period": "Apr 2018 - Mar 2021",
+        "location": "Voronezh, Russia (On-site)",
+        "achievements": [
+          {
+            "text": "Designed and developed landing pages and single-page websites using"
+          },
+          { "text": "JavaScript, jQuery, HTML, CSS" },
+          { "text": "Maintained products on local CMS" },
+          { "text": "Ensured cross-browser compatibility including IE10" },
+          { "text": "Created responsive layouts for various devices" }
+        ]
+      },
+      {
+        "title": "Frontend Web Developer",
+        "company": "Neoflex",
+        "location": "Voronezh, Russia (On-site)",
+        "period": "Apr 2021 - Jan 2023",
+        "achievements": [
+          {
+            "text": "Played a key role in developing a comprehensive client card system for gathering information from all bank departments:",
+            "details": [
+              "Streamlined the client servicing process for bank employees",
+              "Enhanced eﬃciency and customer satisfaction",
+              "Contributed to every stage of the project lifecycle",
+              "Ensured successful passage of acceptance and delivery to production milestones"
+            ]
+          },
+          {
+            "text": "Participated in an internal project to develop a form generator:",
+            "details": ["Significantly reduced labor costs associated with the development of new projects"]
+          },
+          {
+            "text": "Leveraged cutting-edge technologies in frontend development:",
+            "details": ["TypeScript", "React with related libraries (Redux, Router, Styled Components, etc.)"]
+          },
+          {
+            "text": "Adopted a rigorous approach to testing:",
+            "details": ["Used Jest and Cypress to ensure the reliability and performance of applications"]
+          }
+        ]
+      },
+      {
+        "title": "Software Engineer",
+        "company": "Rakuten",
+        "location": "Tokyo, Japan (On-site)",
+        "period": "Mar 2023 - Present",
+        "achievements": [
+          {
+            "text": "Developed a platform optimizing interaction between mobile SDK and WebView for hybrid mobile apps"
+          },
+          {
+            "text": "Designed and developed Go-based APIs for device registration and client access synchronization"
+          },
+          {
+            "text": "Created SDK components, so called processors for the iOS part of the above mentioned platform"
+          },
+          {
+            "text": "Background tasks handling (Web / iOS JS adapter & context manager; utilizing JavaScriptCore framework)"
+          },
+          {
+            "text": "Implemented one-app components based on developed platform, including merchant tutorials and device ID linkage services"
+          },
+          {
+            "text": "POC for the transparent webview (iOS / ViewControllers + Web)"
+          },
+          {
+            "text": "Released update of the auth flow in scope of the connecting devices (Go / JWT / Auth-Bearer-Cookie)"
+          },
+          {
+            "text": "Configured CI/CD pipelines, integrated code quality tools (SonarScanner) and automated changelog generation for the release notes"
+          },
+          {
+            "text": "* Applied SOLID principles to ensure robust, maintainable code architecture"
+          }
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "text": "When my experience is demonstrating my problem solving capability and passionate about challenges, my portfolio focuses on my technical skills and help me to sustain the ability to handle daily tasks.",
+    "list": [
+      {
+        "text": "The Lawyer Web App could be extended as a template for a person-centric website template. Recently migrated to the Astro-React-TypeScript bundle. It uses the mailing service fetched from the backend through the API.",
+        "stack": [
+          {
+            "name": "Astro (Island Concept)",
+            "url": "https://docs.astro.build/en/concepts/islands/"
+          },
+          {
+            "name": "React",
+            "url": "https://react.dev/learn/thinking-in-react"
+          },
+          {
+            "name": "TypeScript",
+            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+          }
+        ]
+      },
+      {
+        "text": "A backend API based on Deno (Node ????) is meant to consolidate small chunks of API integrations, related to my portfolio, to avoid the need for deploying each one separately.",
+        "stack": [
+          { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
+          { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
+          {
+            "name": "TypeScript",
+            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+          }
+        ]
+      },
+      {
+        "text": "Auth-Mailing full-stack monorepository consolidates the Fronted app built with React, and Backend app utilizing Deno runtime.",
+        "stack": [
+          { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
+          { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
+          {
+            "name": "React",
+            "url": "https://react.dev/learn/thinking-in-react"
+          },
+          {
+            "name": "TypeScript",
+            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+          }
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "title": "Development Decision",
+    "text": [
+      "The\u00A0",
+      { "text": "Next.js", "href": "https://nextjs.org/docs" },
+      " has been chosen for this project as apart from creating a showcase for my experience, the purpose is to gain an experience with the unfamiliar framework.\n",
+      "For the deploy and hosting the\u00A0",
+      {
+        "text": "Firebase",
+        "href": "https://firebase.google.com/docs/app-hosting"
+      },
+      " is being used."
+    ]
+  }
+}
