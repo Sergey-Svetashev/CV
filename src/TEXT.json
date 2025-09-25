@@ -3,22 +3,29 @@
     "name": "Sergei",
     "family": "Svetashev",
     "headline": "Full-Stack Developer",
+    "title": "Overview",
     "text": [
-      "I am an experienced Full-Stack Developer (focused on the Frontend) specializing in building robust, scalable, and fully tested web and mobile applications using React, Svelte, JavaScript, and TypeScript. Proven ability to design and implement complex systems, such as API development with Go, as well as adhering to best practices including SOLID principles and CI/CD pipelines. Adept at collaborating across teams to deliver high-quality solutions that align with business goals.",
+      "I am an experienced Full-Stack Developer (focused on the Frontend) specializing in building robust, scalable, and fully tested web and mobile applications using React, Svelte, JavaScript, and TypeScript.",
+      "Proven ability to design and implement complex systems, such as API development with Go, as well as adhering to best practices including SOLID principles and CI/CD pipelines. Adept at collaborating across teams to deliver high-quality solutions that align with business goals.",
       "I am passionate about continuous learning and eager to embrace new challenges to expand technical expertise and drive innovation."
     ],
-    "info": [
-      { "text": "Email", "url": "mailto:svetashevsergey@gmail.com" },
-      { "text": "GitHub", "url": "https://github.com/Sergey-Svetashev" },
-      {
-        "text": "LinkedIn",
-        "url": "https://www.linkedin.com/in/sergei-svetashev-2a5b77195/"
-      },
-      {
-        "text": "3-16-7 Kitasenzoku, Tokyo, Japan",
-        "url": "https://www.google.com/maps/place/%E3%80%92145-0062+Tokyo,+Ota+City,+Kitasenzoku,+3-ch%C5%8Dme%E2%88%9216%E2%88%927+%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%81%E3%83%89%E3%83%AA/@35.6065196,139.6866921,18.15z/"
-      }
-    ]
+    "info": {
+      "title": "Contact me",
+      "links": [
+        { "icon": "I", "text": "Email", "url": "mailto:svetashevsergey@gmail.com" },
+        { "icon": "I", "text": "GitHub", "url": "https://github.com/Sergey-Svetashev" },
+        {
+          "icon": "I",
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/sergei-svetashev-2a5b77195/"
+        },
+        {
+          "icon": "I",
+          "text": "Location",
+          "url": "https://www.google.com/maps/place/%E3%80%92145-0062+Tokyo,+Ota+City,+Kitasenzoku,+3-ch%C5%8Dme%E2%88%9216%E2%88%927+%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%81%E3%83%89%E3%83%AA/@35.6065196,139.6866921,18.15z/"
+        }
+      ]
+    }
   },
   "education": {
     "university": "TURAN University",
@@ -34,7 +41,8 @@
         "title": "Frontend Web Developer",
         "company": "AdCombo",
         "period": "Apr 2018 - Mar 2021",
-        "location": "Voronezh, Russia (On-site)",
+        "location": "Voronezh, Russia",
+        "type": "(On-site)",
         "achievements": [
           {
             "text": "Designed and developed landing pages and single-page websites using"
@@ -48,7 +56,8 @@
       {
         "title": "Frontend Web Developer",
         "company": "Neoflex",
-        "location": "Voronezh, Russia (On-site)",
+        "location": "Voronezh, Russia",
+        "type": "(On-site)",
         "period": "Apr 2021 - Jan 2023",
         "achievements": [
           {
@@ -62,22 +71,30 @@
           },
           {
             "text": "Participated in an internal project to develop a form generator:",
-            "details": ["Significantly reduced labor costs associated with the development of new projects"]
+            "details": [
+              "Significantly reduced labor costs associated with the development of new projects"
+            ]
           },
           {
             "text": "Leveraged cutting-edge technologies in frontend development:",
-            "details": ["TypeScript", "React with related libraries (Redux, Router, Styled Components, etc.)"]
+            "details": [
+              "TypeScript",
+              "React with related libraries (Redux, Router, Styled Components, etc.)"
+            ]
           },
           {
             "text": "Adopted a rigorous approach to testing:",
-            "details": ["Used Jest and Cypress to ensure the reliability and performance of applications"]
+            "details": [
+              "Used Jest and Cypress to ensure the reliability and performance of applications"
+            ]
           }
         ]
       },
       {
         "title": "Software Engineer",
         "company": "Rakuten",
-        "location": "Tokyo, Japan (On-site)",
+        "location": "Tokyo, Japan",
+        "type": "(On-site)",
         "period": "Mar 2023 - Present",
         "achievements": [
           {

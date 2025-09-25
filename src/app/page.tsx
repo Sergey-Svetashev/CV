@@ -1,31 +1,39 @@
-import TEXT from "~/TEXT.json";
-import Background from "~/views/background";
+import { Container } from '~/components/container';
+import { H2 } from '~/components/h2';
+import TEXT from '~/TEXT.json';
 
 export default function Home() {
   // TODO: fetch TEXT according to lang being set
   return (
     <>
-      <div className="p-4 lg:p-8">
-        <h1 className="font-bold uppercase mb-4">
-          {TEXT.main.name}
-          <br />
-          {TEXT.main.family}
-        </h1>
-        <h2 className="font-semibold text-3xl mb-4">{TEXT.main.headline}</h2>
-        {TEXT.main.text.map((t, i) => (
-          <p className="indent-2.5 py-0.5" key={i}>
-            {t}
-          </p>
-        ))}
+      {/* Headings */}
+      <div className='w-full bg-white max-h-[30vh] md:max-h-[47vh] py-5 shadow-plain'>
+        <Container>
+          <h1 className='font-bold uppercase text-[3rem] leading-14 md:text-[7rem] md:leading-24'>
+            {TEXT.main.name}
+            <br />
+            {TEXT.main.family}
+          </h1>
+          <h2 id='drawer-edge' className='font-semibold text-[1.7rem] md:text-[3rem]'>
+            {TEXT.main.headline}
+          </h2>
+        </Container>
       </div>
-      <div id="info"></div>
-      <div id="skills"></div>
-      <div id="experience" className="fixed w-full bottom-0">
-        <Background title={TEXT.experience.title} experience={TEXT.experience.data} />
+      {/* Scrollable content */}
+      <div className='flex h-[calc(100vh-265px)] mb-[72px] overflow-y-scroll md:max-h-[calc(100vh-380px)]'>
+        <Container>
+          <H2 text={TEXT.main.title} />
+          {TEXT.main.text.map((t, i) => (
+            <p className='indent-3 py-0.5 md:py-1.5 md:text-xl' key={i}>
+              {t}
+            </p>
+          ))}
+          <a
+            href='/portfolio'
+            className='self-end text-3xl p-4 flex justify-self-end'
+          >{`${TEXT.portfolio.title} ->`}</a>
+        </Container>
       </div>
-      {/* <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        footer TBD
-      </footer> */}
     </>
   );
 }

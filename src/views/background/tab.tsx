@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useContext, useEffect, useRef } from 'react';
-import { TabContext } from './tab-context';
+import { DrawerContext, TabContext } from './context';
 
 export default function Tab({
   index,
@@ -14,47 +14,40 @@ export default function Tab({
   children: ReactNode;
   className?: string;
 }) {
-  const self = useRef<HTMLDivElement>(null);
-  const child = useRef<HTMLDivElement>(null);
-
+  const wrap = useRef<HTMLDivElement>(null);
+  const labelBox = useRef<HTMLDivElement>(null);
+  const element = useRef<HTMLDivElement>(null);
   const { tabs, setActiveIndex } = useContext(TabContext);
 
+  const { contentLimit } = useContext(DrawerContext); // TODO: purify the tabs from drawer dependency
+
   useEffect(() => {
-      if (self.current && child.current) {
-        const { top, bottom } = child.current.getBoundingClientRect();
+    if (wrap.current) wrap.current.style.zIndex = String(tabs[index]);
+  }, [tabs]);
 
-      console.log('bottom', bottom, );
-      console.log('window.innerHeight', window.innerHeight);
-      console.log('top', top);
-      console.log('window.innerHeight - top', window.innerHeight - top);
-      if (bottom > window.innerHeight) {
-        child.current.style.height = `${window.innerHeight - top}px`;
-        child.current.style.overflowY = 'scroll';
-      } else {
-        child.current.style.height = '100vh';
-      }
+  useEffect(() => {
+    if (labelBox.current && element.current) {
+      const labelHeight = labelBox.current.getBoundingClientRect().height;
 
-      // if (index === active) {
-      self.current.style.zIndex = String(tabs[index]);
-      // } else {
-      //     if (self.current) self.current.style.zIndex = "0";
-      //     // if (self.current && index === 1) self.current.style.zIndex = "1";
-      // }
-
-      // console.log(index, tabs);
+      element.current.style.maxHeight = `${contentLimit - labelHeight}px`;
     }
-  }, [tabs, child.current?.getBoundingClientRect().top]);
+  }, [contentLimit]);
 
   return (
     <div
-      ref={self}
+      ref={wrap}
       className={className}
-      onClick={e => {
+      onClick={() => {
         setActiveIndex(index);
       }}
     >
-      {label}
-      <div className='absolute left-0 w-screen bg-white px-8 py-3 border-t border-gray-200' ref={child}>
+      <div className='relative z-10' ref={labelBox}>
+        {label}
+      </div>
+      <div
+        className='absolute h-screen overflow-y-scroll left-0 w-screen bg-white px-8 py-3 shadow-plain'
+        ref={element}
+      >
         {children}
       </div>
     </div>
