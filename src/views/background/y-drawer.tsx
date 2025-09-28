@@ -2,21 +2,19 @@
 
 import type { PointerEventHandler, ReactNode } from 'react';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { H2 } from '~/components';
+import type { StylableWithChildrenProps } from '~/models';
 import { DrawerContext } from './context';
-import { H2 } from '~/components/h2';
 
 export default function YDrawer({
   title,
   className = '',
   children,
-}: {
+}: StylableWithChildrenProps<{
   title: { text: string; class: string };
-  className?: string;
-  children?: ReactNode;
-}): ReactNode {
+}>): ReactNode {
   const { isDrawerOpen, contentLimit, setDrawerState } = useContext(DrawerContext);
   const [isEventBegan, setIsEventBegan] = useState(false);
-  // const [drawerHeight, setDrawerHight] = useState(0);
   const [startY, setStartY] = useState(0);
   const wrap = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -55,8 +53,6 @@ export default function YDrawer({
     const windowContentLimit =
       window.innerHeight - drawerEdge - (heading.current?.getBoundingClientRect().height || 0);
 
-    // setDrawerHight(contentLimit);
-    console.log(windowContentLimit);
     setDrawerState(prev => ({ ...prev, contentLimit: windowContentLimit }));
   }, []);
 

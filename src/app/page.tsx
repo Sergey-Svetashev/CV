@@ -1,5 +1,4 @@
-import { Container } from '~/components/container';
-import { H2 } from '~/components/h2';
+import { Container, H2 } from '~/components';
 import TEXT from '~/TEXT.json';
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
         </Container>
       </div>
       {/* Scrollable content */}
-      <div className='flex h-[calc(100vh-265px)] mb-[72px] overflow-y-scroll md:max-h-[calc(100vh-380px)]'>
+      <div className='flex h-[calc(100vh-265px)] overflow-y-scroll md:max-h-[calc(100vh-380px)]'>
         <Container>
           <H2 text={TEXT.main.title} />
           {TEXT.main.text.map((t, i) => (

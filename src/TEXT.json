@@ -10,21 +10,24 @@
       "I am passionate about continuous learning and eager to embrace new challenges to expand technical expertise and drive innovation."
     ],
     "info": {
-      "title": "Contact me",
       "links": [
-        { "icon": "I", "text": "Email", "url": "mailto:svetashevsergey@gmail.com" },
-        { "icon": "I", "text": "GitHub", "url": "https://github.com/Sergey-Svetashev" },
+        { "icon": "github", "text": "GitHub", "url": "https://github.com/Sergey-Svetashev" },
         {
-          "icon": "I",
+          "icon": "linkedin",
           "text": "LinkedIn",
           "url": "https://www.linkedin.com/in/sergei-svetashev-2a5b77195/"
         },
         {
-          "icon": "I",
+          "icon": "location",
           "text": "Location",
           "url": "https://www.google.com/maps/place/%E3%80%92145-0062+Tokyo,+Ota+City,+Kitasenzoku,+3-ch%C5%8Dme%E2%88%9216%E2%88%927+%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%81%E3%83%89%E3%83%AA/@35.6065196,139.6866921,18.15z/"
         }
-      ]
+      ],
+      "mail": {
+        "text": "svetashevsergey@gmail.com",
+        "url": "mailto:svetashevsergey@gmail.com"
+      },
+      "phone": { "text": "+81 080-8008-7522", "url": "tel:+8108080087522" }
     }
   },
   "education": {
@@ -34,6 +37,21 @@
     "location": "Almaty, Kazakhstan",
     "period": "Sep 2009 - Jun 2012"
   },
+  "skills": [
+    { "name": "JavaScript", "period": "7 yrs", "level": "Professional" },
+    { "name": "TypeScript", "period": "5 yrs", "level": "Professional" },
+    { "name": "React", "period": "4 yrs", "level": "Advanced" },
+    { "name": "Svelte", "period": "2 yrs", "level": "Intermediate" },
+    { "name": "Astro / Next.js", "period": "2 yrs", "level": "Intermediate" },
+    { "name": "Unit/E2E testing", "period": "4 yrs", "level": "Professional" },
+    { "name": "Go", "period": "1 yr", "level": "Intermediate" },
+    { "name": "HTML5", "period": "7 yrs", "level": "Professional" },
+    { "name": "CSS / SASS", "period": "7 yrs", "level": "Professional" },
+    { "name": "Git", "period": "5 yrs", "level": "Intermediate" },
+    { "name": "CI/CD", "period": "2 yrs", "level": "Intermediate" },
+    { "name": "Node.js/Deno", "period": "2 yrs", "level": "Intermediate" },
+    { "name": "Swift", "period": "2 yrs", "level": "Basic" }
+  ],
   "experience": {
     "title": "Experience",
     "data": [
@@ -133,47 +151,88 @@
     "text": "When my experience is demonstrating my problem solving capability and passionate about challenges, my portfolio focuses on my technical skills and help me to sustain the ability to handle daily tasks.",
     "list": [
       {
-        "text": "The Lawyer Web App could be extended as a template for a person-centric website template. Recently migrated to the Astro-React-TypeScript bundle. It uses the mailing service fetched from the backend through the API.",
-        "stack": [
+        "title": "The Personal Web App",
+        "text": "Presented as the lawyer website in the current implementation. Recently migrated to the Astro-React-TypeScript bundle. It uses the mailing service fetched through the Common backend API.",
+        "stack": {
+          "title": "Stack",
+          "links": [
+            {
+              "name": "Astro (Island Concept)",
+              "url": "https://docs.astro.build/en/concepts/islands/"
+            },
+            {
+              "name": "React",
+              "url": "https://react.dev/learn/thinking-in-react"
+            },
+            {
+              "name": "TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+            }
+          ]
+        },
+        "links": [
+          { "text": "Source code", "url": "https://github.com/Sergey-Svetashev/lawyer-web-app" },
+          { "text": "Published Website", "url": "https://advocativanova.ru/" }
+        ]
+      },
+      {
+        "title": "Common backend API",
+        "text": "The backend based on Deno is meant to consolidate small chunks of API integrations, related to my portfolio, to avoid the need for deploying each one separately.",
+        "stack": {
+          "title": "Stack",
+          "links": [
+            { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
+            { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
+            {
+              "name": "TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+            }
+          ]
+        },
+        "links": [
+          { "text": "Source code", "url": "https://github.com/Sergey-Svetashev/deno-backend-api" },
           {
-            "name": "Astro (Island Concept)",
-            "url": "https://docs.astro.build/en/concepts/islands/"
-          },
-          {
-            "name": "React",
-            "url": "https://react.dev/learn/thinking-in-react"
-          },
-          {
-            "name": "TypeScript",
-            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+            "text": "Deno deploy",
+            "url": "https://console.deno.com/sergei-svetashev/deno-sample-be"
           }
         ]
       },
       {
-        "text": "A backend API based on Deno (Node ????) is meant to consolidate small chunks of API integrations, related to my portfolio, to avoid the need for deploying each one separately.",
-        "stack": [
-          { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
-          { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
-          {
-            "name": "TypeScript",
-            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
-          }
+        "title": "Auth-Mailing",
+        "text": "A full-stack monorepo consolidates the Fronted app built with React, and Backend app utilizing Deno runtime and managing the JWT tokens.",
+        "stack": {
+          "title": "Stack",
+          "links": [
+            { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
+            { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
+            {
+              "name": "React",
+              "url": "https://react.dev/learn/thinking-in-react"
+            },
+            {
+              "name": "TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+            }
+          ]
+        },
+        "links": [
+          { "text": "Source code", "url": "https://github.com/Sergey-Svetashev/auth-mailing" }
         ]
       },
       {
-        "text": "Auth-Mailing full-stack monorepository consolidates the Fronted app built with React, and Backend app utilizing Deno runtime.",
-        "stack": [
-          { "name": "Deno", "url": "https://docs.deno.com/runtime/" },
-          { "name": "Oak", "url": "https://jsr.io/@oak/oak/doc" },
-          {
-            "name": "React",
-            "url": "https://react.dev/learn/thinking-in-react"
-          },
-          {
-            "name": "TypeScript",
-            "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
-          }
-        ]
+        "title": "CV",
+        "text": "And of course I encourage you to look into the source code of the present web application.",
+        "stack": {
+          "title": "Stack",
+          "links": [
+            { "name": "Next.js", "url": "https://nextjs.org/docs" },
+            {
+              "name": "TypeScript",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+            }
+          ]
+        },
+        "links": [{ "text": "Source code", "url": "https://github.com/Sergey-Svetashev/CV" }]
       }
     ]
   },

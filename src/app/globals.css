@@ -5,11 +5,7 @@
   --foreground: #171717;
 
   --plain: 0 0 10px rgba(0, 0, 0, 0.4);
-  --tinge: 0 -7px 10px -4px rgba(0, 0, 0, 0.3);
-  --tinge--active: 0 -10px 12px -5px rgba(0, 0, 0, 0.5);
-  --black-inset: inset 0 0 5px 0 #000;
   --pitch-black-inset: inset 0 0 7px 2px #000;
-  --black-right: 10px 0 10px -5px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
@@ -19,11 +15,14 @@
   --font-mono: var(--font-geist-mono);
 
   --shadow-plain: var(--plain);
-  --shadow-tinge: var(--tinge);
-  --shadow-tinge--active: var(--tinge--active);
-  --shadow-black-inset: var(--black-inset);
+  --shadow-inset-gray: inset 0 0 10px 0 #3c3c3c;
+  --shadow-inset-dense-gray: inset 0 0 10px 10px #3c3c3c;
+  --shadow-tinge: 0 -7px 10px -4px rgba(0, 0, 0, 0.3);
+  --shadow-tinge--active: 0 -10px 12px -5px rgba(0, 0, 0, 0.5);
+  --shadow-black-inset: inset 0 0 5px 0 #000;
   --shadow-pitch-black-inset: var(--pitch-black-inset);
-  --shadow-black-right: var(--black-right);
+  --shadow-plain---pitch-black-inset: var(--plain), var(--pitch-black-inset);
+  --shadow-black-right: 10px 0 10px -5px rgba(0, 0, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,14 +32,17 @@
   }
 }
 
+@layer utilities {
+  .bg-dotted-gray {
+    background-image: radial-gradient(#aaaaaa 1.2px, #606060 1px);
+    background-size: 8px 8px;
+  }
+}
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
-}
-
-html {
-  /* overflow: hidden; */
 }
 
 body {

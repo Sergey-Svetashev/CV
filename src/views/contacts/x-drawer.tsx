@@ -1,17 +1,16 @@
 'use client';
 
-import type { PointerEventHandler, ReactNode } from 'react';
+import type { PointerEventHandler, PropsWithChildren, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import type { StylableWithChildrenProps } from '~/models';
 
 export default function XDrawer({
   label,
   className = '',
   children,
-}: {
-  label: { children: ReactNode; class: string };
-  className?: string;
-  children?: ReactNode;
-}): ReactNode {
+}: StylableWithChildrenProps<{
+  label: PropsWithChildren<{ class: string }>;
+}>): ReactNode {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isEventBegan, setIsEventBegan] = useState(false);
   const [drawerWidth, setDrawerWidth] = useState(0);
@@ -50,6 +49,11 @@ export default function XDrawer({
     const contentWidth = content.current?.getBoundingClientRect().width || 0;
 
     setDrawerWidth(contentWidth);
+
+    if (window.innerWidth >= 980 && wrap.current) {
+      setIsDrawerOpen(true);
+      wrap.current.style.transform = `translateX(-${contentWidth}px)`;
+    }
   }, []);
 
   return (

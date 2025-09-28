@@ -1,3 +1,5 @@
+import { PropsWithChildren, ReactNode } from 'react';
+
 export type Experience = {
   title: string;
   company: string;
@@ -11,3 +13,6 @@ export type Link = {
   text: string;
   url: string;
 };
+
+export type StylableProp<P = unknown> = P & { className?: string };
+export type StylableWithChildrenProps<P = unknown> = P & PropsWithChildren<StylableProp>;

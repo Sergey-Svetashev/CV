@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
-export const Container = ({ children }: { children: ReactNode }) => (
+export const Container = ({ children }: PropsWithChildren) => (
   <div className='m-auto px-4 md:px-8 max-w-5xl'>{children}</div>
 );

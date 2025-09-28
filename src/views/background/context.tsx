@@ -1,6 +1,6 @@
 'use client';
 
-import type { Dispatch, SetStateAction, ReactNode } from 'react';
+import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
 type DrawerData = { isDrawerOpen: boolean; contentLimit: number };
@@ -16,7 +16,7 @@ export const DrawerContext = createContext<DrawerState>({
   setDrawerState: () => null,
 });
 
-export function DrawerCtxProvider({ children }: { children: ReactNode }) {
+export function DrawerCtxProvider({ children }: PropsWithChildren) {
   const [data, setDrawerState] = useState<DrawerData>(initDrawerData);
 
   return (
@@ -35,10 +35,7 @@ export const TabContext = createContext<{
 export function TabCtxProvider({
   initTabs,
   children,
-}: {
-  initTabs: Array<number>;
-  children: ReactNode;
-}) {
+}: PropsWithChildren<{ initTabs: Array<number> }>) {
   const [tabs, setTabs] = useState(initTabs);
 
   const setActiveIndex = (index: number) => {

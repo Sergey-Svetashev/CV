@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode, useContext, useEffect, useRef } from 'react';
+import type { StylableWithChildrenProps } from '~/models';
 import { DrawerContext, TabContext } from './context';
 
 export default function Tab({
@@ -8,12 +9,10 @@ export default function Tab({
   label,
   children,
   className,
-}: {
+}: StylableWithChildrenProps<{
   index: number;
   label: ReactNode;
-  children: ReactNode;
-  className?: string;
-}) {
+}>) {
   const wrap = useRef<HTMLDivElement>(null);
   const labelBox = useRef<HTMLDivElement>(null);
   const element = useRef<HTMLDivElement>(null);
@@ -45,7 +44,7 @@ export default function Tab({
         {label}
       </div>
       <div
-        className='absolute h-screen overflow-y-scroll left-0 w-screen bg-white px-8 py-3 shadow-plain'
+        className='absolute left-0 h-screen overflow-y-scroll w-screen bg-white shadow-plain'
         ref={element}
       >
         {children}

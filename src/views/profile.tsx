@@ -1,7 +1,6 @@
-import { ReactNode } from "react";
-import { Link } from "~/models";
+import { Link } from '~/models';
 
-export default function Profile({ links }: { links: Array<Link> }): ReactNode {
+export default function Profile({ links }: { links: Array<Link> }) {
   return (
     <ul>
       {links.map(({ text, url }) => (
