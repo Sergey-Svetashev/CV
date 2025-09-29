@@ -25,7 +25,7 @@ export default function Background({
           text: title,
         }}
       >
-        <div className={`relative grid ${gridCols[experience.length]} w-full bg-white pt-3 px-4`}>
+        <div className={`relative grid ${gridCols[experience.length]} w-full bg-white text-black pt-3 px-4`}>
           <TabCtxProvider initTabs={new Array(experience.length).fill(0)}>
             {experience.map(({ title, company, location, type, period, achievements }, i) => {
               return (

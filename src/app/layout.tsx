@@ -23,6 +23,24 @@ export const metadata: Metadata = {
   description: 'Portfolio Website',
 };
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCo48wv6voFRMTmop43bPH6D_zvJv-vNoA",
+  authDomain: "cv-web-app-54b5c.firebaseapp.com",
+  projectId: "cv-web-app-54b5c",
+  storageBucket: "cv-web-app-54b5c.firebasestorage.app",
+  messagingSenderId: "801121318733",
+  appId: "1:801121318733:web:b71643b191484f07c76904",
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 export default function RootLayout({
   children,
 }: Readonly<{

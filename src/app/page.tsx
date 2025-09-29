@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Headings */}
-      <div className='w-full bg-white max-h-[30vh] md:max-h-[47vh] py-5 shadow-plain'>
+      <div className='w-full bg-white text-black max-h-[30vh] md:max-h-[47vh] py-5 shadow-plain'>
         <Container>
           <h1 className='font-bold uppercase text-[3rem] leading-14 md:text-[7rem] md:leading-24'>
             {TEXT.main.name}

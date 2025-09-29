@@ -14,7 +14,7 @@ export default function Contacts() {
           'w-16 h-14 rounded-tl-xl rounded-bl-xl bg-dotted-gray absolute right-full top-0 cursor-grab active:cursor-grabbing shadow-2xl shadow-gray-700 flex align-center',
       }}
     >
-      <div className='p-2 pt-3 shadow-2xl shadow-gray-700 bg-white rounded-bl-2xl'>
+      <div className='p-2 pt-3 shadow-2xl shadow-gray-700 bg-white text-black rounded-bl-2xl'>
         <div className='flex justify-around min-w-36'>
           {TEXT.main.info.links.map(({ icon, text, url }) => {
             const Icon = iconMap[icon];

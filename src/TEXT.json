@@ -148,6 +148,7 @@
   },
   "portfolio": {
     "title": "Portfolio",
+    "back": "to Main page",
     "text": "When my experience is demonstrating my problem solving capability and passionate about challenges, my portfolio focuses on my technical skills and help me to sustain the ability to handle daily tasks.",
     "list": [
       {
@@ -171,7 +172,11 @@
           ]
         },
         "links": [
-          { "icon":"github", "text": "Source code", "url": "https://github.com/Sergey-Svetashev/lawyer-web-app" },
+          {
+            "icon": "github",
+            "text": "Source code",
+            "url": "https://github.com/Sergey-Svetashev/lawyer-web-app"
+          },
           { "text": "Published Website", "url": "https://advocativanova.ru/" }
         ]
       },
@@ -190,7 +195,11 @@
           ]
         },
         "links": [
-          { "icon":"github", "text": "Source code", "url": "https://github.com/Sergey-Svetashev/deno-backend-api" },
+          {
+            "icon": "github",
+            "text": "Source code",
+            "url": "https://github.com/Sergey-Svetashev/deno-backend-api"
+          },
           {
             "text": "Deno deploy",
             "url": "https://console.deno.com/sergei-svetashev/deno-sample-be"
@@ -216,7 +225,11 @@
           ]
         },
         "links": [
-          { "icon":"github", "text": "Source code", "url": "https://github.com/Sergey-Svetashev/auth-mailing" }
+          {
+            "icon": "github",
+            "text": "Source code",
+            "url": "https://github.com/Sergey-Svetashev/auth-mailing"
+          }
         ]
       },
       {
@@ -232,7 +245,13 @@
             }
           ]
         },
-        "links": [{ "icon":"github", "text": "Source code", "url": "https://github.com/Sergey-Svetashev/CV" }]
+        "links": [
+          {
+            "icon": "github",
+            "text": "Source code",
+            "url": "https://github.com/Sergey-Svetashev/CV"
+          }
+        ]
       }
     ]
   },
