@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { Container, H2 } from '~/components';
+import { iconMap } from '~/icons';
 import TEXT from '~/TEXT.json';
 
 export default () => (
@@ -12,22 +13,26 @@ export default () => (
         <div key={i} className='bg-gray-200 my-1 px-4 py-2 rounded'>
           <p className='py-1'>{text}</p>
           <div className='py-1'>
-            <h3 className='inline font-semibold'>{stack.title}:</h3>
+            <h3 className='inline font-semibold text-sm'>{stack.title}:</h3>
             {stack.links.map(({ name, url }, i) => (
-              <a className='text inline-block px-1' key={i} href={url}>
+              <a className='text-sm inline-block px-1' key={i} href={url}>
                 {name}
               </a>
             ))}
           </div>
-          <div className='py-1'>
-            {links.map(({ text, url }, i) => (
-              <Fragment key={i}>
-                <a className='' href={url}>
-                  {text}
-                </a>
-                <br />
-              </Fragment>
-            ))}
+          <div className='py-1 text-xl'>
+            {links.map(({ icon, text, url }, i) => {
+              const Icon = icon ? iconMap[icon] : () => null;
+
+              return (
+                <Fragment key={i}>
+                  <a className='flex items-center gap-2 py-1' href={url}>
+                    <Icon className='w-6 h-6' />
+                    {text}
+                  </a>
+                </Fragment>
+              );
+            })}
           </div>
         </div>
       </div>

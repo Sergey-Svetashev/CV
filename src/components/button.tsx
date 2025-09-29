@@ -7,7 +7,7 @@ export const Button = ({
 }: StylableWithChildrenProps<{ onClick: () => void }>) => (
   <button
     type='button'
-    className={`cursor-pointer p-2 rounded-xl bg-[#606060] transition-all shadow-2xl shadow-gray-800 transform-none hover:shadow-xl hover:translate-y-[10px] ${className}`}
+    className={`cursor-pointer p-2 rounded-xl bg-[#606060] transition-all transform-none ${className}`}
     onClick={onClick}
   >
     {children}

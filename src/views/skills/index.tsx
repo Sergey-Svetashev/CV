@@ -6,7 +6,7 @@ export default function Skills({ className = '' }: StylableProp) {
   return (
     <TopDrawer>
       <div
-        className={`bg-white p-4 w-11/12 mx-auto rounded-b-xl shadow-2xl shadow-gray-800 ${className}`}
+        className={`bg-white rounded-b-xl shadow-2xl shadow-gray-800 p-4 w-11/12 mx-auto sm:max-w-96 sm:ml-auto sm:mr-5 ${className}`}
       >
         {TEXT.skills.map(({ level, name, period }) => (
           <div className='flex justify-end items-center p-2' key={name}>

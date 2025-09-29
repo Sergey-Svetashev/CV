@@ -36,14 +36,14 @@ export default function RootLayout({
           <div id='contacts' className='fixed top-0 left-full mt-2'>
             <Contacts />
           </div>
+          <div id='experience' className='fixed w-full top-full'>
+            <Background title={TEXT.experience.title} experience={TEXT.experience.data} />
+          </div>
           <div id='skills' className='fixed top-0 left-0 w-full'>
             <TopDrawerContextProvider>
               <Skills />
               <SkillsButton />
             </TopDrawerContextProvider>
-          </div>
-          <div id='experience' className='fixed w-full top-full'>
-            <Background title={TEXT.experience.title} experience={TEXT.experience.data} />
           </div>
         </div>
       </body>
