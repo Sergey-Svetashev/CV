@@ -1,25 +1,26 @@
 import { Container, H2 } from '~/components';
-import TEXT from '~/TEXT.json';
+import TEXT from '~/TEXT.json'; // TODO! fetch!
 
 export default function Home() {
-  // TODO: fetch TEXT according to lang being set
   return (
     <>
       {/* Headings */}
-      <div className='w-full bg-white text-black max-h-[30vh] md:max-h-[47vh] py-5 shadow-plain'>
+      <div id='drawer-edge' className='w-full bg-white text-black pt-5 shadow-plain'>
         <Container>
           <h1 className='font-bold uppercase text-[3rem] leading-14 md:text-[7rem] md:leading-24'>
             {TEXT.main.name}
             <br />
             {TEXT.main.family}
           </h1>
-          <h2 id='drawer-edge' className='font-semibold text-[1.7rem] md:text-[3rem]'>
-            {TEXT.main.headline}
-          </h2>
+          <h2 className='font-semibold text-[1.7rem] md:text-[3rem]'>{TEXT.main.headline}</h2>
         </Container>
+        <a
+          href='/portfolio'
+          className='text-3xl text-center p-4 mt-2 block bg-gray-400'
+        >{`${TEXT.portfolio.title} ->`}</a>
       </div>
       {/* Scrollable content */}
-      <div className='flex h-[calc(100vh-265px)] overflow-y-scroll md:max-h-[calc(100vh-380px)]'>
+      <div className='pb-20 max-h-[calc(100vh-250px)] md:max-h-[calc(100vh-360px)] overflow-y-scroll'>
         <Container>
           <H2 text={TEXT.main.title} />
           {TEXT.main.text.map((t, i) => (
@@ -27,10 +28,6 @@ export default function Home() {
               {t}
             </p>
           ))}
-          <a
-            href='/portfolio'
-            className='self-end text-3xl p-4 flex justify-self-end'
-          >{`${TEXT.portfolio.title} ->`}</a>
         </Container>
       </div>
     </>

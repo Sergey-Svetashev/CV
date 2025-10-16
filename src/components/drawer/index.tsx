@@ -3,14 +3,17 @@
 import type { PointerEventHandler } from 'react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import type { StylableWithChildrenProps } from '~/models';
-import { TopDrawerContext } from './context';
+import type { Views } from './context';
+import { DrawerContext } from './context';
 
-export default function TopDrawer({ className = '', children }: StylableWithChildrenProps) {
-  const closeTriggerHeight = 280;
-  const { isOpen, setIsOpen } = useContext(TopDrawerContext);
+export default function Drawer({
+  id,
+  className = '',
+  children,
+}: StylableWithChildrenProps<{ id: Views }>) {
+  const { isOpen, setIsOpen } = useContext(DrawerContext)[id];
   const [isEventBegan, setIsEventBegan] = useState(false);
   const [drawerHeight, setDrawerHeight] = useState(0);
-  const [drawerPosition, setDrawerPosition] = useState(0);
   const [startY, setStartY] = useState(0);
   const wrap = useRef<HTMLDivElement>(null);
 
@@ -20,29 +23,25 @@ export default function TopDrawer({ className = '', children }: StylableWithChil
   };
 
   const handleEventEnd: PointerEventHandler<HTMLDivElement> = async e => {
-    const lastDrawerPosition = (drawerPosition || drawerHeight) - (startY - e.clientY);
+    const lastDrawerPosition = drawerHeight - (startY - e.clientY);
 
-    if (wrap.current && lastDrawerPosition <= closeTriggerHeight) {
+    if (wrap.current) {
       await Promise.resolve((wrap.current.style = ''));
-      // TODO!: investigate bug when the event is not fired after quick click and move
-      wrap.current.style.transform = `translateY(${0}px)`;
+      if (lastDrawerPosition <= drawerHeight / 1.1) {
+        wrap.current.style.transform = `translateY(${0}px)`;
 
-      setIsOpen(prev => !prev);
+        setIsOpen(prev => !prev);
+      } else {
+        wrap.current.style.transform = `translateY(${drawerHeight}px)`;
+      }
     }
 
-    setDrawerPosition(() =>
-      lastDrawerPosition <= closeTriggerHeight
-        ? 0
-        : lastDrawerPosition >= drawerHeight
-        ? drawerHeight
-        : lastDrawerPosition
-    );
     setIsEventBegan(false);
   };
 
   const handleMove: PointerEventHandler<HTMLDivElement> = e => {
     if (isEventBegan && wrap.current) {
-      const updatedPosition = (drawerPosition || drawerHeight) - (startY - e.clientY);
+      const updatedPosition = drawerHeight - (startY - e.clientY);
 
       wrap.current.style.transitionDuration = '0s';
       wrap.current.style.transform = `translateY(${
@@ -55,15 +54,13 @@ export default function TopDrawer({ className = '', children }: StylableWithChil
     const contentHeight = (wrap.current?.getBoundingClientRect().height || 0) + 50;
 
     setDrawerHeight(contentHeight);
-    // setDrawerPosition(contentHeight);
-  }, [isOpen]);
 
-  useEffect(() => {
-    if (wrap.current && isOpen)
-      wrap.current.style.transform = `translateY(${drawerPosition || drawerHeight}px)`;
+    if (wrap.current) {
+      isOpen
+        ? (wrap.current.style.transform = `translateY(${drawerHeight}px)`)
+        : (wrap.current.style.transform = `translateY(${0}px)`);
+    }
   }, [isOpen]);
-
-  useEffect(() => {}, []);
 
   return (
     <div
@@ -71,7 +68,7 @@ export default function TopDrawer({ className = '', children }: StylableWithChil
       onPointerDown={handleEventStart}
       onPointerUp={handleEventEnd}
       onPointerMove={handleMove}
-      className={`${className} touch-none select-none cursor-grab active:cursor-grabbing transition-transform duration-700 absolute w-full bottom-12`}
+      className={`${className} touch-none select-none cursor-grab active:cursor-grabbing transition-transform duration-700`}
     >
       {children}
     </div>

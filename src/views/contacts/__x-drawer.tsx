@@ -14,23 +14,27 @@ export default function XDrawer({
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isEventBegan, setIsEventBegan] = useState(false);
   const [drawerWidth, setDrawerWidth] = useState(0);
-  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
   const wrap = useRef<HTMLDivElement>(null);
   const labelBox = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
 
   const handleEventStart: PointerEventHandler<HTMLDivElement> = e => {
     setIsEventBegan(true);
-    setStartX(e.clientX);
+    setStartY(e.clientY);
   };
 
   const handleEventEnd: PointerEventHandler<HTMLDivElement> = async e => {
     if (wrap.current) {
       await Promise.resolve((wrap.current.style = ''));
       // TODO!: investigate bug when the event is not fired after quick click and move
-      !isDrawerOpen
-        ? (wrap.current.style.transform = `translateX(-${drawerWidth}px)`)
-        : (wrap.current.style.transform = 'translateX(0)');
+      if (!isDrawerOpen) {
+
+        (wrap.current.style.transform = `translateY(-${drawerWidth}px)`)
+      } else {
+
+         (wrap.current.style.transform = 'translateY(0)');
+      }
     }
     setIsEventBegan(false);
     setIsDrawerOpen(p => !p);
@@ -40,31 +44,31 @@ export default function XDrawer({
     if (isEventBegan && wrap.current) {
       wrap.current.style.transitionDuration = '0s';
       isDrawerOpen
-        ? (wrap.current.style.transform = `translateX(-${drawerWidth + (startX - e.clientX)}px)`) // TODO! make style configurable
-        : (wrap.current.style.transform = `translateX(-${startX - e.clientX}px)`);
+        ? (wrap.current.style.transform = `translateY(-${drawerWidth + (startY - e.clientY)}px)`) // TODO! make style configurable
+        : (wrap.current.style.transform = `translateY(-${startY - e.clientY}px)`);
     }
   };
 
   useEffect(() => {
-    const contentWidth = content.current?.getBoundingClientRect().width || 0;
+    const contentHeight = content.current?.getBoundingClientRect().height || 0;
 
-    setDrawerWidth(contentWidth);
+    setDrawerWidth(contentHeight);
 
     if (window.innerWidth >= 980 && wrap.current) {
       setIsDrawerOpen(true);
-      wrap.current.style.transform = `translateX(-${contentWidth}px)`;
+      wrap.current.style.transform = `translateY(-${contentHeight}px)`;
     }
   }, []);
 
   return (
     <>
-      <div ref={wrap} className={`transition-transform duration-500 ${className}`}>
+      <div ref={wrap} onPointerDown={handleEventStart}
+          onPointerUp={handleEventEnd}
+          onPointerMove={handleMove} className={`transition-transform duration-500 ${className}`}>
         <div
           ref={labelBox}
           className={`${label.class} touch-none select-none`}
-          onPointerDown={handleEventStart}
-          onPointerUp={handleEventEnd}
-          onPointerMove={handleMove}
+          
         >
           {label.children}
         </div>

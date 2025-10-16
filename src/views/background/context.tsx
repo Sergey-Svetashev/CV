@@ -1,5 +1,7 @@
 'use client';
 
+// TODO!: merge with ~/components/drawer
+
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
@@ -8,7 +10,7 @@ type DrawerState = DrawerData & { setDrawerState: Dispatch<SetStateAction<Drawer
 
 const initDrawerData: DrawerData = {
   isDrawerOpen: false,
-  contentLimit: 300,
+  contentLimit: 200,
 };
 
 export const DrawerContext = createContext<DrawerState>({

@@ -6,9 +6,9 @@ import TEXT from '~/TEXT.json';
 
 export default function Portfolio() {
   return (
-    <Container>
+    <Container className='pb-20'>
       <Link
-        className='pt-2 inline-block text-gray-500'
+        className='pt-4 inline-block text-gray-500'
         href='/'
       >{`<- ${TEXT.portfolio.back}`}</Link>
       <H2 text={TEXT.portfolio.title} />

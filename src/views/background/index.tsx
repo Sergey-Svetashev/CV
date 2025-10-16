@@ -21,7 +21,7 @@ export default function Background({
       <YDrawer
         title={{
           class:
-            'bg-dotted-gray cursor-grab active:cursor-grabbing rounded-tl-2xl rounded-tr-2xl text-white shadow-plain---pitch-black-inset w-full absolute bottom-full px-5',
+            'bg-dotted-gray cursor-grab active:cursor-grabbing rounded-tl-2xl rounded-tr-2xl text-white text-center shadow-plain---pitch-black-inset w-full absolute bottom-full px-5',
           text: title,
         }}
       >
@@ -48,12 +48,12 @@ export default function Background({
                 >
                   <ul className='pt-4 px-8 pb-8'>
                     {achievements.map(({ text, details }, i) => (
-                      <li key={`${period}_${++i}`}>
+                      <li key={`${period}_${++i}`} className='list-disc marker py-1'>
                         {text}
                         {details ? (
                           <ul>
                             {details.map((d, i) => (
-                              <li key={i}>{d}</li>
+                              <li key={i} className='list-disc ml-2 py-1 marker:text-gray-400'>{d}</li>
                             ))}
                           </ul>
                         ) : null}
